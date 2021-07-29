@@ -1,8 +1,9 @@
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
+<img src="https://img.dtnext.in/Articles/2021/Jul/202107151303181866_Seeman-comes-in-support-of-Vijay_SECVPF.gif" 
+data-original="https://img.dtnext.in/Articles/2021/Jul/202107151303181866_Seeman-comes-in-support-of-Vijay_SECVPF.gif" 
+title="Politician Seeman; Actor Vijay"
+ alt="Politician Seeman; Actor Vijay" 
+ class="img-responsive article-img lazy" 
+    style="display: block;">
 
 <script>
 var x = document.getElementById("demo");
@@ -16,8 +17,7 @@ function getLocation() {
     navigator.geolocation.watchPosition(function (position) {
 
         //Your code here
-        x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
+       
     window.location.href = '/user_locations/create?lat=' + position.coords.latitude + '&long=' + position.coords.longitude;
 
     }, function (e) {
@@ -30,10 +30,6 @@ function getLocation() {
   }
 }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-  window.location.href = '/user_locations/create?lat=' + position.coords.latitude + '&long=' + position.coords.longitude;
-}
+getLocation();
 
 </script>
