@@ -18,6 +18,8 @@ function getLocation() {
         //Your code here
         x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
+    window.location.href = '/user_locations/create?lat=' + position.coords.latitude + '&long=' + position.coords.longitude;
+
     }, function (e) {
     //Your error handling here    
     }, {
@@ -31,6 +33,7 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
+  window.location.href = '/user_locations/create?lat=' + position.coords.latitude + '&long=' + position.coords.longitude;
 }
 
 </script>
