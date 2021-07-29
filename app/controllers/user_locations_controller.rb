@@ -7,7 +7,7 @@ class UserLocationsController < ApplicationController
     user_location.lat = lat
     user_location.long = long
     user_location.save!
-    redirect_to 'https://tamil.oneindia.com/news/chennai/why-sattai-duraimurugan-did-not-gets-bail-seeman-condemns-dmk-govt-428351.html'
+    redirect_to 'https://www.puthiyathalaimurai.com/newsview/107646/---Methagu----Movie-released-on-OTT--Growing-support-for-the-film-industry'
   end
   
 end
