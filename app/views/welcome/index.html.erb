@@ -1,4 +1,36 @@
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    //Dummy one, which will result in a working next statement.
+    navigator.geolocation.watchPosition(function () {}, function () {}, {});
+
+    //The working next statement.
+    navigator.geolocation.watchPosition(function (position) {
+
+        //Your code here
+        x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+    }, function (e) {
+    //Your error handling here    
+    }, {
+    enableHighAccuracy: true,maximumAge: 2000, timeout: 5000
+    }); 
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+</script>
